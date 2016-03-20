@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
+    <link rel="stylesheet"  type="text/css" href="/../project/css/bootstrap.min.css">
+    <link rel="stylesheet"  type="text/css" href="/../project/css/bootstrap-theme.css">
+    <link rel="stylesheet"  type="text/css"  href="/../project/css/bootstrap.css">
+    <link rel="'stylesheet"  type="text/css" href="/../public/stylesheets/login.css">
+
+    <script type="text/javascript" language="JavaScript">
+        function checkPass()
+        {
+
+            var pass1 = document.getElementById('password');
+            var pass2 = document.getElementById('cpassword');
+            var message = document.getElementById('confirmMessage');
+
+            var goodColor = "#66cc66";
+            var badColor = "#ff6666";
+
+            if(pass1.value == pass2.value){
 
 
+                cpassword.style.backgroundColor = goodColor;
+                message.style.color = goodColor;
+                message.innerHTML = "Passwords Match!"
+            }else{
+
+                cpassword.style.backgroundColor = badColor;
+                message.style.color = badColor;
+                message.innerHTML = "Passwords Do Not Match!"
+            }
+        }
+
+    </script>
 </head>
 <body>
-
+<script src="/../project/js/jquery-1.12.2.min.js"></script>
+<script src="/../project/js/bootstrap.min.js"></script>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -107,32 +137,10 @@
 
         <div class="passwords">
             <form>
-        <script type="text/javascript" src="/code_examples/passtest.js">
-            function checkPass()
-            {
 
-                var pass1 = document.getElementById('password');
-                var pass2 = document.getElementById('cpassword');
 
-                var message = document.getElementById('confirmMessage');
-
-                var goodColor = "#66cc66";
-                var badColor = "#ff6666";
-
-                if(pass1.value == pass2.value){
-
-                    pass2.style.backgroundColor = goodColor;
-                    message.style.color = goodColor;
-                    message.innerHTML = "Passwords Match!"
-                }else{
-
-                    pass2.style.backgroundColor = badColor;
-                    message.style.color = badColor;
-                    message.innerHTML = "Passwords Do Not Match!"
-                }
-            }
-        </script>
                  Password: <input type="password" name="password" id="password" ><br>
+
                  Confirm Password: <input type="password" name="cpassword" id="cpassword" onkeyup="checkPass(); return false;">
                     <span id="confirmMessage" class="confirmMessage"></span>
                 </form>
